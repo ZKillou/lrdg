@@ -1,21 +1,23 @@
 # Laradiodugaming Discord Rich Presence
-Bienvenue ! Tu aimerais avoir le status personnalisé pour
-LaRADIOdugaming ? Alors suit bien ce tutoriel !
+Bienvenue ! Tu aimerais avoir le status personnalisé pour LaRADIOdugaming ? Alors suit bien ce tutoriel !
 
 Prérequis :
 - Windows 7 ou plus
-- Node.js
+- [Node.js](https://nodejs.org/en/download/)
+
+Lors du premier lancement :
+- Ouvre le fichier install.bat
+- Attend la fin du téléchargement de tout les modules
+- Referme la page après avoir fini le téléchargement
 
 Comment procéder ?
 - Ouvre le fichier run.bat
-- Rends toi sur la page https://laradiodugaming.glitch.me/ws
-- Garde ces deux si ouverts pour garder le status
-(Tout doit être effectué dans l'ordre)
+- Laisse cette fenêtre ouverte pour garder le status !
 
 En cas de problème ?
 - Demande de l'aide sur le serveur ! https://discord.gg/bAhSy7B
 
 Maintenant, tu peux avoir ton status pour la radio !
 
-v0.0.1
+v0.1.0
 By CreeperGames
