@@ -20,6 +20,10 @@ const getter = () => {
 		.then(res => res.json())
 		.then(body => {
 			data = body
+			if(!data.isPlaying){
+				console.log("Aucune musique est en cours de lecture")
+				return process.exit()
+			}
 			console.log("Les données ont été récupérées avec succès !")
 			setStatus(data)
 		})
@@ -31,7 +35,14 @@ const setStatus = (d) => {
 		details: `Écoute : ${d.actuel.title}`,
 		state: `Ensuite viendra : ${d.queue[0].title}`,
 		startTimestamp: d.startAt,
-		endTimestamp: end
+		endTimestamp: end,
+		buttons: [{
+			label: "Serveur Discord",
+			url: "https://discord.gg/bAhSy7B"
+		}, {
+			label: "Site Internet",
+			url: "https://laradiodugaming.glitch.me/"
+		}]
 	}).then(() => {
 		console.log("Activité mise à jour !")
 		setTimeout(() => main(), 15000)
