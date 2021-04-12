@@ -15,20 +15,18 @@ client.login({ clientId }).catch(error => {
 	process.exit()
 })
 
-const main = async () => {
-	await getter()
-	setStaus(data)
-}
-
 const getter = () => {
 	fetch("https://laradiodugaming.glitch.me/np/json")
 		.then(res => res.json())
-		.then(body => data = body)
-	console.log("Les données ont été récupérées avec succès !")
+		.then(body => {
+			data = body
+			console.log("Les données ont été récupérées avec succès !")
+			setStatus(data)
+		})
 }
 
 const setStatus = (d) => {
-	let end = d.startAt + (d.actuel.duration * 1000)
+	let end = d.startAt + d.actuel.duration
 	client.setActivity({
 		details: `Écoute : ${d.actuel.title}`,
 		state: `Ensuite viendra : ${d.queue[0].title}`,
@@ -36,8 +34,12 @@ const setStatus = (d) => {
 		endTimestamp: end
 	}).then(() => {
 		console.log("Activité mise à jour !")
-		setTimeout(async () => main(), end + 10000)
+		setTimeout(() => main(), 15000)
 	}).catch(error => console.error(error))
+}
+
+const main = async () => {
+	await getter()
 }
 
 client.on('ready', () => {
