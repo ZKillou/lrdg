@@ -28,10 +28,10 @@ const getter = () => {
 }
 
 const setStatus = (d) => {
-	let end = d.startAt + (d.songDuration * 1000)
+	let end = d.startAt + (d.actuel.duration * 1000)
 	client.setActivity({
-		details: `Ecoute : ${d.songTitle}`,
-		state: 'Dans le salon vocal.',
+		details: `Écoute : ${d.actuel.title}`,
+		state: `Ensuite viendra : ${d.queue[0].title}`,
 		startTimestamp: d.startAt,
 		endTimestamp: end
 	}).then(() => {
