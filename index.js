@@ -1,6 +1,6 @@
 // Ne rien modifier !
 // LaRADIOdugaming module by CreeperGames
-// v0.1.0
+// v0.2.0
 
 const RPC = require("discord-rpc")
 const fetch = require("node-fetch")
@@ -31,11 +31,13 @@ const getter = () => {
 
 const setStatus = (d) => {
 	let end = d.startAt + d.actuel.duration
-	client.setActivity({
+	let obj = {
 		details: `Écoute : ${d.actuel.title}`,
 		state: `Ensuite viendra : ${d.queue[0].title}`,
 		startTimestamp: d.startAt,
 		endTimestamp: end,
+		largeImageKey: "large",
+		largeImageText: "lrdg-0.2.0",
 		buttons: [{
 			label: "Serveur Discord",
 			url: "https://discord.gg/bAhSy7B"
@@ -43,7 +45,18 @@ const setStatus = (d) => {
 			label: "Site Internet",
 			url: "https://laradiodugaming.glitch.me/"
 		}]
-	}).then(() => {
+	}
+	if(d.actuel.crowned){
+		obj.smallImageKey = "crowned"
+		obj.smallImageText = `Couronné en ${d.actuel.crowned}`
+	} else if(d.actuel.isBest) {
+		obj.smallImageKey = "sparkles"
+		obj.smallImageText = "Meilleure des musiques"
+	} else {
+		obj.smallImageKey = "small"
+		obj.smallImageText = "OST/Animé"
+	}
+	client.setActivity(obj).then(() => {
 		console.log("Activité mise à jour !")
 		setTimeout(() => main(), 15000)
 	}).catch(error => console.error(error))
