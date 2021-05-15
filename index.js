@@ -24,7 +24,6 @@ const getter = () => {
 				console.log("Aucune musique est en cours de lecture")
 				return process.exit()
 			}
-			console.log("Les données ont été récupérées avec succès !")
 			setStatus(data)
 		})
 }
@@ -57,7 +56,6 @@ const setStatus = (d) => {
 		obj.smallImageText = "OST/Animé"
 	}
 	client.setActivity(obj).then(() => {
-		console.log("Activité mise à jour !")
 		setTimeout(() => main(), 15000)
 	}).catch(error => console.error(error))
 }
