@@ -1,5 +1,5 @@
 # Laradiodugaming Discord Rich Presence
-Bienvenue ! Tu aimerais avoir le status personnalisé pour LaRADIOdugaming ? Alors suit bien ce tutoriel !
+Bienvenue ! Tu aimerais avoir le statut personnalisé pour LaRADIOdugaming ? Alors suit bien ce tutoriel !
 
 Prérequis :
 - Windows 7 ou plus
@@ -17,7 +17,6 @@ Comment procéder ?
 En cas de problème ?
 - Demande de l'aide sur le serveur ! https://discord.gg/bAhSy7B
 
-Maintenant, tu peux avoir ton status pour la radio !
+Maintenant, tu peux avoir ton statut pour la radio !
 
-v0.1.0
 By CreeperGames
