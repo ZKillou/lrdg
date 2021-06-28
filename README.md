@@ -19,5 +19,5 @@ En cas de problème ?
 
 Maintenant, tu peux avoir ton status pour la radio !
 
-v0.1.0
+v0.3.0
 By CreeperGames
