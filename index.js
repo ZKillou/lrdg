@@ -1,6 +1,6 @@
 // Ne rien modifier !
 // LaRADIOdugaming module by CreeperGames
-// v0.2.0
+// v0.3.0
 
 const RPC = require("discord-rpc")
 const fetch = require("node-fetch")
@@ -15,7 +15,7 @@ client.login({ clientId }).catch(error => {
 	process.exit()
 })
 
-const getter = () => {
+const main = () => {
 	fetch("https://laradiodugaming.glitch.me/np/json")
 		.then(res => res.json())
 		.then(body => {
@@ -31,15 +31,15 @@ const getter = () => {
 const setStatus = (d) => {
 	let end = d.startAt + d.actuel.duration
 	let obj = {
-		details: `Écoute : ${d.actuel.title}`,
-		state: `Ensuite viendra : ${d.queue[0].title}`,
+		details: `🎵 Écoute : ${d.actuel.title}`,
+		state: `⏭ Puis : ${d.queue[0].title}`,
 		startTimestamp: d.startAt,
 		endTimestamp: end,
 		largeImageKey: "large",
-		largeImageText: "lrdg-0.2.0",
+		largeImageText: "Lesalondugaming (lrdg-v0.3.0)",
 		buttons: [{
-			label: "Serveur Discord",
-			url: "https://discord.gg/bAhSy7B"
+			label: "Écouter la musique",
+			url: "http://laradiodugaming.glitch.me/listen"
 		}, {
 			label: "Site Internet",
 			url: "https://laradiodugaming.glitch.me/"
@@ -58,10 +58,6 @@ const setStatus = (d) => {
 	client.setActivity(obj).then(() => {
 		setTimeout(() => main(), 15000)
 	}).catch(error => console.error(error))
-}
-
-const main = async () => {
-	await getter()
 }
 
 client.on('ready', () => {
