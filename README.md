@@ -1,3 +1,8 @@
+# NOTE
+Suite à la sortie de la nouvelle version de la radio, cette repository n'est plus mise à jour. Veuillez utiliser https://github.com/LesalondugamingStudios/client à la place.
+
+**La présence ne fonctionne plus.**
+
 # Laradiodugaming Discord Rich Presence
 Bienvenue ! Tu aimerais avoir le statut personnalisé pour LaRADIOdugaming ? Alors suit bien ce tutoriel !
 
